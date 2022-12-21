@@ -112,7 +112,6 @@ function initialize() {
         userInput.managerOfficeNumber
       );
       html.push(manager);
-      console.log(html);
       initTeam();
     });
   };
