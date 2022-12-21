@@ -15,14 +15,14 @@ body {
   padding-top: 1rem;
 }
 
-.employee-card {
+.new-employee {
   box-shadow: 5px 5px 5px gray;
   margin: 1rem;
   border: none;
   max-width: 25rem;
 }
 
-.employee-card-header {
+.new-employee-header {
   padding: 1rem;
   background-color: #fff;
   border-bottom: 1px solid #e3e3e3;

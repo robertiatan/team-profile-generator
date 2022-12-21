@@ -1,4 +1,4 @@
-# Team Project Generator
+# Team Profile Generator
 
 ## Table of Contents
 
@@ -10,9 +10,9 @@
 
 ## Description
 
-This application will take user input and create an HTML website that showcases the team members, their names, emails, roles, and other specific details about each role. It is created in JavaScript and ran using Node.JS.
+This application will take user input and create an HTML website that showcases the team members, their names, emails, roles, and other specific details about each role. It is created in JavaScript and ran using Node.JS, and uses the inquirer and jest libraries.
 
-## Demo
+## Mockup Website
 ![Application Screenshot](assets/Screenshot%202022-12-21%20044731.png)
 ### Screencastify Demo
 This is a video that walks the user through how to use the application. It also shows the output of the application, and the tests passing.
@@ -21,7 +21,7 @@ This is a video that walks the user through how to use the application. It also 
 
 ## Installation
 
-To run this application, make sure you have Node.JS and required dependencies installed. You can invoke the application using the command 'node index.js'.
+To run this application, make sure you have Node.JS and required dependencies installed in the file directory. You can invoke the application using the command 'node index.js', and run any tests using the command 'npm run test'.
 
 ## Usage
 

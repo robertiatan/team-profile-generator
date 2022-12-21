@@ -20,7 +20,7 @@ function initialize() {
           type: "list",
           name: "newEmployee",
           message: "Would you like to add a Manager, Engineer, or Intern?",
-          choices: ["Manager", "Engineer", "Intern", "No, I'm done!"],
+          choices: ["Manager", "Engineer", "Intern", "Exit Application"],
           validate: function (input) {
             if (input.trim() === "") {
               return "Please select an option.";
@@ -54,7 +54,7 @@ function initialize() {
       {
         type: "input",
         name: "managerName",
-        message: "What's the name of the Manager?",
+        message: "What's the Manager's name?",
         default: "Manager",
         validate: function (input) {
           if (input.trim() === "") {
@@ -67,7 +67,7 @@ function initialize() {
       {
         type: "input",
         name: "managerEmail",
-        message: "What's the email of the Manager?",
+        message: "What's the Manager's email?",
         default: "manager@example.com",
         validate: function (input) {
           if (input.trim() === "") {
@@ -80,7 +80,7 @@ function initialize() {
       {
         type: "input",
         name: "managerId",
-        message: "What's the ID of the Manager?",
+        message: "What's the Manager's ID?",
         default: 1,
         validate: function (input) {
           if (isNaN(input.trim())) {
@@ -93,7 +93,7 @@ function initialize() {
       {
         type: "input",
         name: "managerOfficeNumber",
-        message: "What's the office number of the Manager?",
+        message: "What's the Manager's office number?",
         default: 1,
         validate: function (input) {
           if (isNaN(input.trim())) {
@@ -123,7 +123,7 @@ function initialize() {
       {
         type: "input",
         name: "engineerName",
-        message: "What's the name of the Engineer?",
+        message: "What's the Engineer's name?",
         default: "Engineer",
         validate: function (input) {
           if (input.trim() === "") {
@@ -136,7 +136,7 @@ function initialize() {
       {
         type: "input",
         name: "engineerEmail",
-        message: "What's the email of the Engineer?",
+        message: "What's the Engineer's email?",
         default: "engineer@example.com",
         validate: function (input) {
           if (input.trim() === "") {
@@ -149,7 +149,7 @@ function initialize() {
       {
         type: "input",
         name: "engineerId",
-        message: "What's the ID of the Engineer?",
+        message: "What's the Engineer's ID?",
         default: 02,
         validate: function (input) {
           if (isNaN(input.trim())) {
@@ -162,11 +162,11 @@ function initialize() {
       {
         type: "input",
         name: "engineerGithub",
-        message: "What's the Github of the Engineer?",
+        message: "What's the Engineer's Github?",
         default: "github.com/engineer",
         validate: function (input) {
           if (input.trim() === "") {
-            return "Please enter an Github.";
+            return "Please enter a Github link.";
           } else {
             return true;
           }
@@ -192,7 +192,7 @@ function initialize() {
       {
         type: "input",
         name: "internName",
-        message: "What's the name of the Intern?",
+        message: "What's the Intern's name?",
         default: "Intern",
         validate: function (input) {
           if (input.trim() === "") {
@@ -205,7 +205,7 @@ function initialize() {
       {
         type: "input",
         name: "internEmail",
-        message: "What's the email of the Intern?",
+        message: "What's the Intern's email?",
         default: "intern@example.com",
         validate: function (input) {
           if (input.trim() === "") {
@@ -257,7 +257,7 @@ function initialize() {
   // Function to build team
   const buildTeam = () => {
   fs.writeFileSync(outputPath, htmlTemplate(html), "utf-8");
-  console.log("Your team profile has been created!");
+  console.log("Team profile website has been generated!");
   };
 
   initTeam();
