@@ -2,38 +2,27 @@
 const Intern = require("../lib/Intern");
 
 // Returns the intern object
-test('Intern object created', () => {
-    const intern = new Intern(
-        "Robert",
-        01,
-        "robertiatan@gmail.com",
-        "UofT"
-      );
-      expect(intern.name).toEqual("Robert");
-      expect(intern.email).toEqual("robertiatan@gmail.com");
-      expect(intern.id).toEqual(01);
-      expect(intern.school).toEqual("UofT")
+test("Intern object created", () => {
+  const int = new Intern();
+  expect(typeof int).toBe("object");
+});
+
+// Test for setting school
+test("Intern school set", () => {
+  const school = "UofT";
+  const int = new Intern("Robert", 1, "robertiatan@gmail.com", school);
+  expect(int.school).toBe(school);
 });
 
 // getSchool method test
-test('getSchool method works correctly', () => {
-    const intern = new Intern(
-        "Robert",
-        01,
-        "robertiatan@gmail.com",
-        "UofT"
-      );
-      expect(intern.getSchool).toEqual("UofT");
+test("getSchool method works correctly", () => {
+  const int = new Intern("Robert", 1, "robertiatan@gmail.com", "UofT");
+  expect(int.getSchool()).toBe("UofT");
 });
 
 // getRole method works correctly
-test('Role method works correctly', () => {
-    const role = "Intern";
-    const intern = new Intern(
-        "Robert",
-        01,
-        "robertiatan@gmail.com",
-        "UofT"
-      );   
-      expect(intern.getRole).toEqual(role);
+test("Role method works correctly", () => {
+  const role = "Intern";
+  const int= new Intern("Robert", 1, "robertiatan@gmail.com", "UofT");
+  expect(int.getRole()).toBe(role);
 });

@@ -1,20 +1,18 @@
-// Team constructors
+// Required modules for roles and node modules
 const Manager = require("./lib/Manager.js");
 const Engineer = require("./lib/Engineer.js");
 const Intern = require("./lib/Intern.js");
-
-//HTML template
-const template = require("./src/htmlTemplate.js");
-
-// Node modules
 const inquirer = require("inquirer");
+const path = require("path");
 const fs = require("fs");
+const OUTPUT_DIR = path.resolve(__dirname, "dist");
+const outputPath = path.join(OUTPUT_DIR, "team.html");
+const htmlTemplate = require("./src/htmlTemplate.js");
 
-teamList = [];
+html = [];
 
-// Function to run application
-
-const initialize = () => {
+// Function to initialize app
+function initialize() {
   function initTeam() {
     inquirer
       .prompt([
@@ -48,10 +46,9 @@ const initialize = () => {
         }
       });
   }
-};
 
-// Function to add Manager
-const addManager = () => {
+  // Function to add Manager
+  function addManager() {
   inquirer
     .prompt([
       {
@@ -114,14 +111,14 @@ const addManager = () => {
         userInput.managerEmail,
         userInput.managerOfficeNumber
       );
-      teamList.push(manager);
-      console.log(teamList);
+      html.push(manager);
+      console.log(html);
       initTeam();
     });
-};
+  };
 
-// Function to add Engineer
-const addEngineer = () => {
+  // Function to add Engineer
+  function addEngineer() {
   inquirer
     .prompt([
       {
@@ -184,13 +181,13 @@ const addEngineer = () => {
         userInput.engineerEmail,
         userInput.engineerGithub
       );
-      teamList.push(engineer);
+      html.push(engineer);
       initTeam();
     });
-};
+  };
 
-// Function to add Intern
-const addIntern = () => {
+  // Function to add Intern
+  function addIntern() {
   inquirer
     .prompt([
       {
@@ -253,17 +250,18 @@ const addIntern = () => {
         userInput.internId,
         userInput.internSchool
       );
-      teamList.push(intern);
+      html.push(intern);
       initTeam();
     });
-};
+  };
 
-// Function to build team
-const buildTeam = () => {
-  fs.writeFileSync("./dist/index.html", template(myTeam(teamList)), "utf-8");
+  // Function to build team
+  const buildTeam = () => {
+  fs.writeFileSync(outputPath, htmlTemplate(html), "utf-8");
   console.log("Your team profile has been created!");
-};
+  };
 
-buildTeam();
+  initTeam();
+}
 
 initialize();

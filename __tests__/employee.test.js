@@ -3,33 +3,55 @@ const Employee = require("../lib/Employee");
 
 // Test to create a new employee object
 test("Employee object created", () => {
-  const employee = new Employee("Robert", 01, "robertiatan@gmail.com");
+  const emp = new Employee();
+  expect(typeof emp).toBe("object");
+});
 
-  expect(employee.name).toEqual("Robert");
-  expect(employee.email).toEqual("robertiatan@gmail.com");
-  expect(employee.id).toEqual(01);
+// Test for setting name
+test("Employee name set", () => {
+  const name = "Robert";
+  const emp = new Employee(name);
+  expect(emp.name).toBe(name);
 });
 
 // Test for getName method
 test("Employee name retrieved from getName", () => {
-  const employee = new Employee("Robert", 01, "robertiatan@gmail.com");
-  expect(employee.getName).toEqual("Robert");
+  const name = "Robert";
+  const emp = new Employee(name);
+  expect(emp.getName()).toBe(name);
+});
+
+// Test for setting email
+test("Employee email set", () => {
+  const email = "robertiatan@gmail.com";
+  const emp = new Employee("Robert", 1, email);
+  expect(emp.email).toBe(email);
 });
 
 // Test for getEmail method
 test("Employee email retrieved from getEmail", () => {
-  const employee = new Employee("Robert", 01, "robertiatan@gmail.com");
-  expect(employee.getEmail).toEqual("robertiatan@gmail.com");
+  const email = "robertiatan@gmail.com";
+  const emp = new Employee("Robert", 1, email);
+  expect(emp.email).toBe(email);
+});
+
+// Test for setting id
+test("Employee ID set", () => {
+  const id = 1;
+  const emp = new Employee("Robert", id);
+  expect(emp.id).toBe(id);
 });
 
 // Test for getId method
 test("Employee ID retrieved from getId", () => {
-  const employee = new Employee("Robert", 01, "robertiatan@gmail.com");
-  expect(employee.getId).toEqual(01);
+  const id = 1;
+  const emp = new Employee("Robert", id);
+  expect(emp.id).toBe(id);
 });
 
 // Test for getRole method
 test("Employee role retrieved from getRole", () => {
   const role = "Employee";
-  expect(role.getRole).toEqual("Employee");
+  const emp = new Employee("Robert", 1, "robertiatan@gmail.com");
+  expect(emp.getRole()).toBe(role);
 });
